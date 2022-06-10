@@ -1,7 +1,7 @@
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/signers';
 import { expect } from 'chai';
 import { ethers, waffle } from 'hardhat';
-import { MultiSigWallet } from '../typechain-types'
+import { MultiSigWallet } from '../typechain-types';
 
 describe('MultiSigWallet', () => {
   let contract : MultiSigWallet;

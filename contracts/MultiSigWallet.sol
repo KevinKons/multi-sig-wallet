@@ -129,9 +129,5 @@ contract MultiSigWallet {
         approved[_txId][msg.sender] = false;
         emit Revoke(msg.sender, _txId); 
     }
-
-    // function encodeWithSignature() public pure returns (bytes memory output) {
-    //     output = abi.encodeWithSignature('transfer(string)', 'call foo');
-    // }
 }
   

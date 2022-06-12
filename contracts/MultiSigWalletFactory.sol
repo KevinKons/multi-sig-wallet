@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract MultiSigWalletFactory is Ownable {
 
     event NewWallet(address);
-    event WithDraw(address destiny, uint value);
+    event Withdraw(address destiny, uint value);
     event Donation(address donor, uint value, bytes msg);
 
     receive() external payable {
@@ -28,8 +28,8 @@ contract MultiSigWalletFactory is Ownable {
         return address(this).balance;
     }
 
-    function withDraw() external onlyOwner {
-        emit WithDraw(_msgSender(), address(this).balance);
+    function withdraw() external onlyOwner {
+        emit Withdraw(_msgSender(), address(this).balance);
         payable(_msgSender()).transfer(address(this).balance);
     }
     

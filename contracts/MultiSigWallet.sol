@@ -105,7 +105,7 @@ contract MultiSigWallet {
     }
 
     function execute(uint _txId) external txExists(_txId) notExecuted(_txId) {
-        require(_getApprovalCount(_txId) > required, "approvals < required");
+        require(_getApprovalCount(_txId) >= required, "approvals < required");
         
         Transaction storage transaction = transactions[_txId];
         transaction.executed = true;

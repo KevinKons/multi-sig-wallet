@@ -117,7 +117,6 @@ describe('MultiSigWallet', () => {
     const txId = 0;
     await contract.approve(txId);
     await contract.connect(owners[1]).approve(txId);
-    await contract.connect(owners[2]).approve(txId);
 
     await expect(contract.execute(txId))
       .to.emit(contract, 'Execute')

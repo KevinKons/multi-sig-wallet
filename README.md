@@ -31,11 +31,23 @@ yarn hardhat run scripts/deploy.js
 ```
 
 ### Running contracts verifications
+
+MultiSigWallet:
+
 ```
 yarn hardhat verify 
 --network ropsten 
 --constructor-args ./arguments.js 
 --show-stack-traces 
+<contract_address>
+```
+
+MultiSigWalletFacoty:
+
+```
+yarn hardhat verify 
+--contract contracts/MultiSigWalletFactory.sol:MultiSigWalletFactory 
+--network ropsten 
 <contract_address>
 ```
 

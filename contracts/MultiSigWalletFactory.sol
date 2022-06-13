@@ -31,6 +31,5 @@ contract MultiSigWalletFactory is Ownable {
     function withdraw() external onlyOwner {
         emit Withdraw(_msgSender(), address(this).balance);
         payable(_msgSender()).transfer(address(this).balance);
-    }
-    
+    }   
 }
